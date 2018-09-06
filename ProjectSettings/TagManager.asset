@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WorldMap
   - Entity
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Items
+  - Entities
   - 
   - 
   - 
@@ -43,8 +44,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floors
+    uniqueID: 3749114403
+    locked: 0
   - name: DecorativeBottom
     uniqueID: 3293582607
+    locked: 0
+  - name: Walls
+    uniqueID: 1880925375
+    locked: 0
+  - name: PickupItems
+    uniqueID: 2874804051
     locked: 0
   - name: NonPlayerEntities
     uniqueID: 1034726971

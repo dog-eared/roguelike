@@ -8,6 +8,8 @@ public class EntityManager : MonoBehaviour {
 	private PlayerInputManager _pim;
 	
 	public MapEntity[] entities;
+
+	public int actingEntity = 0;
 	
 	
 
@@ -23,18 +25,33 @@ public class EntityManager : MonoBehaviour {
 
 	void Update() {
 
-		if (Input.GetKeyDown("1")) {
-			_pim.SetPlayable(entities[0]);			
+		if (!entities[actingEntity].GetPlayable()) {
+			entities[actingEntity].NextStep();
+			actingEntity++;
+		} else if (entities[actingEntity].hasActed) {
+			actingEntity++;
 		}
 
-		if (Input.GetKeyDown("2")) {
-			_pim.SetPlayable(entities[1]);			
+		CheckRoundDone();
+
+
+	}
+
+	void CheckRoundDone() {
+		if (actingEntity >= entities.Length) {
+			StartNewTurn();
+		}
+	}
+
+	void StartNewTurn() {
+		//Reset hasActed for all active entities
+		//Start entity list again
+
+		foreach (MapEntity ent in entities) {
+			ent.hasActed = false;
 		}
 
-		if (Input.GetKeyDown("3")) {
-			_pim.SetPlayable(entities[2]);			
-		}
-
+		actingEntity = 0;
 	}
 
 
@@ -46,7 +63,7 @@ public class EntityManager : MonoBehaviour {
 			try {
 				entities[i] = entityObjects[i].GetComponent<MapEntity>();
 			} catch {
-				Debug.Log("Entity " + entities[i].name + " is missing MapEntity Component!");
+				Debug.Log("ERROR: " + entities[i].name + "is tagged 'Entity' but is missing MapEntity component.");
 			}
 		}
 		

@@ -53,10 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DEBUG_GetInfoOnClick.cs" />
-     <Compile Include="Assets\EntityManager.cs" />
-     <Compile Include="Assets\MapEntity.cs" />
-     <Compile Include="Assets\PlayerInputManager.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Entity\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Entity\EnemyAI_SimplePatrol.cs" />
+     <Compile Include="Assets\Scripts\Entity\MapEntity.cs" />
+     <Compile Include="Assets\Scripts\InventoryItem.cs" />
+     <Compile Include="Assets\Scripts\Managers\EntityManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\PlayerInputManager.cs" />
+     <Compile Include="Assets\Scripts\Utility\IAttackable.cs" />
+     <Compile Include="Assets\Scripts\Utility\ILootable.cs" />
+     <Compile Include="Assets\Scripts\Utility\MapItem.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/e_m/Roguelike/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

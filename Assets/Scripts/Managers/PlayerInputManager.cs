@@ -18,6 +18,7 @@ public class PlayerInputManager : MonoBehaviour {
 	public bool isPlayerTurn = true;
 
 	public MapEntity current;
+	public CameraController _cc;
 	
 	void Update () {
 
@@ -33,6 +34,18 @@ public class PlayerInputManager : MonoBehaviour {
 		
 		if (moveDir.x != 0 || moveDir.y != 0) {
 			current.Move(moveDir.x, moveDir.y);
+		}
+
+		if (Input.GetKeyDown("space")) {
+			current.Pause();
+		}
+
+		if (Input.GetKeyDown("tab")) {
+			_cc.CenterOn(current.gameObject);
+		}
+
+		if (Input.GetKeyDown("g") || Input.GetKeyDown("l")) {
+			current.Loot(current.location);
 		}
 
 	}
