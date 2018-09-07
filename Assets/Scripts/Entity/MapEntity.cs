@@ -26,16 +26,15 @@ public class MapEntity : MonoBehaviour {
 	public Vector2Int location; //In general we'll use this for step/distance calculations rather than transform.position
 								//It'll be a little more reliable once we have characters moving around in tandem
 	
-	static private GameObject currentMap;
-	static private GridLayout gl;
+	static private GameObject currentMap; //NOTE to self: I can probably ditch these by moving the aligntotile somewhere
+	static private GridLayout gl; 		  //more logical
 
 	static private int itemLayer = 1 << 8; //We use this to ignore the lootable item layer when checking for collisions
 
 	IEnumerator nextMove;
-
-	bool isMoving = false; 
-
-
+	
+	//bool isMoving = false;
+	
 	private void Awake() {
 		GetCurrentMap();
 		AlignToTile();
@@ -156,7 +155,7 @@ public class MapEntity : MonoBehaviour {
 		Vector2 init = transform.position; //Initial position
 		float i = 0;
 
-		isMoving = true;
+		//isMoving = true;
 
 		while (i < 1) {
 
@@ -170,7 +169,7 @@ public class MapEntity : MonoBehaviour {
 		nextMove = null;
 
 		AlignToTile();
-		isMoving = false;
+		//isMoving = false;
 	}
 
 

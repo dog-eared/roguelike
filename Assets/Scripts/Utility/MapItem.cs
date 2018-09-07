@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class MapItem : MonoBehaviour, ILootable<GameObject> {
 
-	public string itemName = "Untitled Item";
+	public string mapName = "Untitled Item"; //this can be separate from the actual GameObject name; the player can see
+											 //something in-character but I can see something sensible in the editor
+	
+	public InventoryItem inventoryItem; //ScriptableObject to give to the player when they loot this item (if relevant)
 
-	public ItemType itemType = ItemType.Gold;
-	public int value = 10;
+	public ItemType itemType; //will default to giving user gold
+	public int value = 1;
 
 	static private GameObject currentMap;
 	static private GridLayout gl;
@@ -40,14 +43,14 @@ public class MapItem : MonoBehaviour, ILootable<GameObject> {
 	
 	public void Loot(GameObject looter) {
 		if (itemType == ItemType.Gold) {
-			Debug.Log("Picked up " + value + " " + itemName + ".");
+			Debug.Log("Picked up " + value + " " + mapName + ".");
 		}
 
 		if (itemType == ItemType.Gold) {
 			InventoryManager.ModGold(value);			
 			GameObject.Destroy(this.gameObject);
 		} else if (itemType == ItemType.InventoryItem) {
-			InventoryManager.AddItem(new InventoryItem("rat poison"));
+			InventoryManager.AddItem(inventoryItem);
 			GameObject.Destroy(this.gameObject);
 		} else {
 			Debug.Log("LOOT FAIL: ");
