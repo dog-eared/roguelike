@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 317412535}
   - component: {fileID: 317412534}
   - component: {fileID: 317412538}
+  - component: {fileID: 317412539}
   m_Layer: 0
   m_Name: FAC1 Bad Snake
   m_TagString: Entity
@@ -406,6 +407,7 @@ MonoBehaviour:
   faction: 4
   moveSpeed: 17
   _ai: {fileID: 317412538}
+  _cd: {fileID: 317412539}
   hasActed: 0
   location: {x: 0, y: 0}
 --- !u!212 &317412536
@@ -483,6 +485,20 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 0, y: 2}
   - {x: 2, y: 0}
+--- !u!114 &317412539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 317412533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7484d14acab4891b10f0ec67fd4dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 20
+  maxHP: 20
+  attackPower: 5
 --- !u!1 &458777562
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +930,7 @@ GameObject:
   - component: {fileID: 966056142}
   - component: {fileID: 966056144}
   - component: {fileID: 966056145}
+  - component: {fileID: 966056146}
   m_Layer: 0
   m_Name: PLAYER Hero
   m_TagString: Entity
@@ -995,8 +1012,9 @@ MonoBehaviour:
   faction: 1
   moveSpeed: 20
   _ai: {fileID: 0}
+  _cd: {fileID: 966056146}
   hasActed: 0
-  location: {x: 0, y: 0}
+  location: {x: 1, y: 2}
 --- !u!61 &966056145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1022,6 +1040,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
+--- !u!114 &966056146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966056141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7484d14acab4891b10f0ec67fd4dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 100
+  maxHP: 100
+  attackPower: 25
 --- !u!1 &1036458642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,6 +2356,7 @@ GameObject:
   - component: {fileID: 1364742510}
   - component: {fileID: 1364742513}
   - component: {fileID: 1364742514}
+  - component: {fileID: 1364742515}
   m_Layer: 0
   m_Name: NPC Red Dwarf
   m_TagString: Entity
@@ -2346,6 +2379,7 @@ MonoBehaviour:
   faction: 2
   moveSpeed: 20
   _ai: {fileID: 1364742514}
+  _cd: {fileID: 1364742515}
   hasActed: 0
   location: {x: 0, y: 0}
 --- !u!212 &1364742511
@@ -2447,6 +2481,20 @@ MonoBehaviour:
   patrolLocations:
   - {x: 0, y: 4}
   - {x: 3, y: 4}
+--- !u!114 &1364742515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364742509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7484d14acab4891b10f0ec67fd4dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 99
+  maxHP: 150
+  attackPower: 70
 --- !u!1 &1643925226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,7 +3346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc53255adaef41bfae505ac6f3d6cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapName: Untitled Item
+  mapName: Garbage
   inventoryItem: {fileID: 11400000, guid: 80b161e4ef0674643bf1ba153dedbb26, type: 2}
   itemType: 3
   value: 1

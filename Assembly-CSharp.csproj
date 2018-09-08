@@ -53,17 +53,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Entity\EnemyAI.cs" />
-     <Compile Include="Assets\Scripts\Entity\EnemyAI_SimplePatrol.cs" />
-     <Compile Include="Assets\Scripts\Entity\MapEntity.cs" />
-     <Compile Include="Assets\Scripts\InventoryItem.cs" />
+     <Compile Include="Assets\Scripts\Entities\CombatData.cs" />
+     <Compile Include="Assets\Scripts\Entities\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Entities\EnemyAI_SimplePatrol.cs" />
+     <Compile Include="Assets\Scripts\Entities\MapEntity.cs" />
+     <Compile Include="Assets\Scripts\Items\InventoryItem.cs" />
+     <Compile Include="Assets\Scripts\Items\MapItem.cs" />
      <Compile Include="Assets\Scripts\Managers\EntityManager.cs" />
      <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerInputManager.cs" />
+     <Compile Include="Assets\Scripts\Utility\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Utility\IAlignable.cs" />
      <Compile Include="Assets\Scripts\Utility\IAttackable.cs" />
      <Compile Include="Assets\Scripts\Utility\ILootable.cs" />
-     <Compile Include="Assets\Scripts\Utility\MapItem.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/e_m/Roguelike/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
