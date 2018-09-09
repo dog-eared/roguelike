@@ -108,8 +108,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		if (_ai != null) {
 			_ai.NextStep();
 			hasActed = true;
-		}
-		else {
+		} else {
 			Debug.Log("ERROR: No AI assigned to " + transform.name);
 		}
 	}
@@ -125,6 +124,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 			GameObject hit = Physics2D.Raycast(target, Vector3.forward, Mathf.Infinity).transform.gameObject;
 			if (hit.GetComponent<CombatData>()) {
 				_cd.Attack(hit);
+				hasActed = true;
 			}
 			return false;
 		}

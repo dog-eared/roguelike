@@ -6,8 +6,9 @@ public class CombatData : MonoBehaviour {
 
 	public int currentHP = 100;
 	public int maxHP = 100;
-	
 	public int attackPower = 25;
+
+	public bool destroyBodyOnDeath = true;
 	
 	public void Attack(GameObject target) {
 	
@@ -28,6 +29,10 @@ public class CombatData : MonoBehaviour {
 		if (currentHP < 0) {
 			Debug.Log(this.gameObject.name + " was killed!!");
 			EntityManager.EntityDestroyed(this.gameObject);
+			
+			if (destroyBodyOnDeath) {
+				Destroy(this.gameObject);
+			}
 		}
 	}
 	

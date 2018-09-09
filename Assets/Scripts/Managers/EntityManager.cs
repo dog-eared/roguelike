@@ -8,6 +8,7 @@ public class EntityManager : MonoBehaviour {
 	private static bool[] destroyedList;
 	
 	private PlayerInputManager _pim;
+	private static EffectManager _em;
 	
 	public MapEntity[] entities;
 
@@ -16,11 +17,23 @@ public class EntityManager : MonoBehaviour {
 	static private GameObject currentMap;
 	static private GridLayout gl;
 
+	/* PUBLIC METHODS *///
+	
+	public static void EntityDestroyed(GameObject entity) {
+		destroyedList[System.Array.IndexOf(entityObjects, entity)] = true;
+		PlaceDeathEffect(Vector3Int.FloorToInt(entity.transform.position));
+	}
+	
+	/* PRIVATE METHODS */
 
-	void Awake() {
+	private void Awake() {
 
 		if (_pim == null) {
 			_pim = GetComponent<PlayerInputManager>();
+		}
+		
+		if (_em == null) {
+			_em = GetComponent<EffectManager>();
 		}
 		
 		GetCurrentMap();
@@ -28,7 +41,7 @@ public class EntityManager : MonoBehaviour {
 		
 	}
 
-	void Update() {
+	private void Update() {
 
 		if (!destroyedList[actingEntity]) { //Check that the bool associated with this list is not destroyed
 			if (!entities[actingEntity].GetPlayable()) {
@@ -47,7 +60,7 @@ public class EntityManager : MonoBehaviour {
 
 	}
 	
-	void GetCurrentMap() {
+	private void GetCurrentMap() {
 		if (currentMap == null) {
 			currentMap = GameObject.FindGameObjectWithTag("WorldMap");
 			gl = currentMap.GetComponent<GridLayout>();
@@ -55,7 +68,7 @@ public class EntityManager : MonoBehaviour {
 	}
 
 
-	void CheckRoundDone() {
+	private void CheckRoundDone() {
 		
 		if (System.Array.IndexOf(destroyedList, false) == -1) { //Check if there's no one left alive
 			this.enabled = false;
@@ -66,7 +79,7 @@ public class EntityManager : MonoBehaviour {
 		}
 	}
 
-	void StartNewTurn() {
+	private void StartNewTurn() {
 		//Reset hasActed for all active entities
 		//Start entity list again
 
@@ -78,7 +91,7 @@ public class EntityManager : MonoBehaviour {
 	}
 
 
-	void GetAllEntities(bool newDestroyedList = true) {
+	private void GetAllEntities(bool newDestroyedList = true) {
 		entityObjects = GameObject.FindGameObjectsWithTag("Entity");
 		entities = new MapEntity[entityObjects.Length];
 
@@ -97,7 +110,7 @@ public class EntityManager : MonoBehaviour {
 	}
 	
 	
-	void AlignAllToTile() {
+	private void AlignAllToTile() {
 		
 		for (int i = 0; i < entities.Length; i++) {
 			
@@ -107,8 +120,12 @@ public class EntityManager : MonoBehaviour {
 		}
 	}
 	
-	public static void EntityDestroyed(GameObject entity) {
-		destroyedList[System.Array.IndexOf(entityObjects, entity)] = true;
+	private static void PlaceDeathEffect(Vector3Int location) {
+		try {
+			_em.PlaceEffect(location);
+		} catch {
+			Debug.Log("ERROR: Couldn't place death effect.");
+		}
 	}
 
 }

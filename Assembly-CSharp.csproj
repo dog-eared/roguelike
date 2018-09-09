@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Entities\MapEntity.cs" />
      <Compile Include="Assets\Scripts\Items\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\Items\MapItem.cs" />
+     <Compile Include="Assets\Scripts\Managers\EffectManager.cs" />
      <Compile Include="Assets\Scripts\Managers\EntityManager.cs" />
      <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerInputManager.cs" />
