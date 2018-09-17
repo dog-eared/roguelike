@@ -16,9 +16,6 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	[Header("Config:")]
 	public string entityName = "Untitled Entity"; //Name that the user sees in GUI/ingame, rather than using the 
 												  //GameObject name
-	
-	
-	
 	public Faction faction; 	//Used to determine if/when they act in the turn order, general allegience
 	public float moveSpeed = 10f; //Speed of movements on board
 
@@ -31,43 +28,20 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	public Vector2Int location; //In general we'll use this for step/distance calculations rather than transform.position
 								//It'll be a little more reliable once we have characters moving around in tandem
 
+
 	static private int itemLayer = 1 << 8; //We use this to ignore the lootable item layer when checking for collisions
-
-	IEnumerator nextMove;
-	
-	//bool isMoving = false;
-	
-	private void Awake() {
-		location = CleanLocation(transform.position);
-	}
-
-	
+	private	IEnumerator nextMove;
+		
 	/*
-	 *	PUBLIC METHODS 
+	 *	PUBLIC METHODS
 	 */
-
-	public void Move(int x, int y) {
-
-		Vector2 target = new Vector2(location.x + x, location.y + y); //setup our direction
-		
-		//See if there's another move already queued
-		if (!(nextMove == null)) {
-			return;
-		}
-		
-		//Check space is passable
-		if (!CheckPassableAt(target)) {
-			return;
-		}
-		
-		nextMove = LerpTo(target);
-		StartCoroutine(nextMove);
-		hasActed = true;
-
+	
+	public Vector2Int GetLocation() {
+		return location;
 	}
 
-	public void Move(Vector2 move) {
-		Move((int)move.x, (int)move.y);
+	public bool GetPlayable() {
+		return faction == Faction.Player;
 	}
 
 	public void Loot(Vector2Int getLocation, bool restrainDistance = true) {
@@ -89,20 +63,40 @@ public class MapEntity : MonoBehaviour, IAlignable {
 			}
 		}
 	}
+	
+	public void Move(int x, int y) {
+
+		Vector2 target = new Vector2(location.x + x, location.y + y); //setup our direction
+		
+		if (x == 0 && y == 0) {
+			//If we got a move with no x and y, interpret as a pause;
+			Pause();
+			return;
+		}
+		
+		//See if there's another move already queued
+		if (!(nextMove == null)) {
+			return;
+		}
+		
+		//Check space is passable
+		if (!CheckPassableAt(target)) {
+			return;
+		}
+		
+		nextMove = LerpTo(target);
+		StartCoroutine(nextMove);
+		hasActed = true;
+
+	}
+
+	public void Move(Vector2 move) {
+		Move((int)move.x, (int)move.y);
+	}
 
 	public void Pause() {
 		hasActed = true;
 	}
-
-
-	public Vector2Int GetLocation() {
-		return location;
-	}
-
-	public bool GetPlayable() {
-		return faction == Faction.Player;
-	}
-
 
 	public void NextStep() {
 		if (_ai != null) {
@@ -116,6 +110,20 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	/*
 	 *	PRIVATE METHODS 
 	 */
+	
+	public void AlignToTile(Vector3 newLocation) {
+		transform.position = newLocation;
+		location = CleanLocation(newLocation);	
+	}
+	
+	public void AlignToTile() {
+		//Overloaded version incase I forget to use the normal version
+		AlignToTile(transform.position);
+	}
+	
+	private void Awake() {
+		location = CleanLocation(transform.position);
+	}
 
 	private bool CheckPassableAt(Vector2 target) {
 		//If a collider found, returns false; not passable
@@ -133,20 +141,10 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		return true;
 	}
 
-	
-	public void AlignToTile(Vector3 newLocation) {
-		transform.position = newLocation;
-		location = CleanLocation(newLocation);	
-	}
-	
-	public void AlignToTile() {
-		//Overloaded version incase I forget to use the normal version
-		AlignToTile(transform.position);
-	}
-	
 	private Vector2Int CleanLocation(Vector3 newLocation) {
 		return new Vector2Int((int)newLocation.x, (int)newLocation.y);
 	}
+	
 	
 	private IEnumerator LerpTo(Vector2 newLoc) {
        

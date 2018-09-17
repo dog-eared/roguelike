@@ -17,6 +17,7 @@ public class EntityManager : MonoBehaviour {
 	static private GameObject currentMap;
 	static private GridLayout gl;
 
+
 	/* PUBLIC METHODS *///
 	
 	public static void EntityDestroyed(GameObject entity) {
@@ -53,11 +54,7 @@ public class EntityManager : MonoBehaviour {
 		} else {
 			actingEntity++;
 		}
-		
-
 		CheckRoundDone();
-
-
 	}
 	
 	private void GetCurrentMap() {
@@ -66,7 +63,6 @@ public class EntityManager : MonoBehaviour {
 			gl = currentMap.GetComponent<GridLayout>();
 		}
 	}
-
 
 	private void CheckRoundDone() {
 		
@@ -104,9 +100,14 @@ public class EntityManager : MonoBehaviour {
 		}
 		
 		if (newDestroyedList) {
+			//Array.Sort(entities, SortEntity);
 			destroyedList = new bool[entities.Length];
 		}
 		
+	}
+	
+	static int SortEntity(GameObject a, GameObject b) {
+		return a.GetComponent<CombatData>().initiative.CompareTo(b.GetComponent<CombatData>().initiative);
 	}
 	
 	

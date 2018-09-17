@@ -7,11 +7,14 @@ public class CombatData : MonoBehaviour {
 	public int currentHP = 100;
 	public int maxHP = 100;
 	public int attackPower = 25;
+	public int initiative = 10;
 
 	public bool destroyBodyOnDeath = true;
 	
-	public void Attack(GameObject target) {
+
 	
+	public void Attack(GameObject target) {
+		
 		CombatData opposed;
 		
 		try {
@@ -22,6 +25,7 @@ public class CombatData : MonoBehaviour {
 			Debug.Log("ATTACK ERROR: Couldn't find " + target.name + "'s CombatData");
 		}
 	}
+
 	
 	public void Damage(int damage) {
 		currentHP -= damage;
@@ -35,5 +39,6 @@ public class CombatData : MonoBehaviour {
 			}
 		}
 	}
+	
 	
 }

@@ -500,6 +500,8 @@ MonoBehaviour:
   currentHP: 20
   maxHP: 20
   attackPower: 5
+  initiative: 10
+  destroyBodyOnDeath: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &896800322
 GameObject:
@@ -939,6 +941,8 @@ MonoBehaviour:
   currentHP: 100
   maxHP: 100
   attackPower: 25
+  initiative: 10
+  destroyBodyOnDeath: 1
 --- !u!1 &1036458642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,8 +2035,11 @@ MonoBehaviour:
   _player: {fileID: 966056141}
   isMoving: 0
   isPlayerTurn: 1
+  touchControls: 0
   current: {fileID: 966056144}
   _cc: {fileID: 519420030}
+  mouseStepTolerance: 0.8
+  mouseDiagonalTolerance: 1.5
 --- !u!4 &1059723834
 Transform:
   m_ObjectHideFlags: 0
@@ -2125,7 +2132,7 @@ Transform:
   - {fileID: 1942506288}
   - {fileID: 896800323}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316601849
 GameObject:
@@ -2396,6 +2403,8 @@ MonoBehaviour:
   currentHP: 99
   maxHP: 150
   attackPower: 70
+  initiative: 10
+  destroyBodyOnDeath: 1
 --- !u!1 &1643925226
 GameObject:
   m_ObjectHideFlags: 0
