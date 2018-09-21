@@ -14,16 +14,16 @@ public class MapEntity : MonoBehaviour, IAlignable {
      */
 
 	[Header("Config:")]
-	public string entityName = "Untitled Entity"; //Name that the user sees in GUI/ingame, rather than using the 
+	public string entityName = "Untitled Entity"; //Name that the user sees in GUI/ingame, rather than using the
 												  //GameObject name
 	public Faction faction; 	//Used to determine if/when they act in the turn order, general allegience
 	public float moveSpeed = 10f; //Speed of movements on board
 
-	public EnemyAI _ai;
+	public MapAI _ai;
 	public CombatData _cd;
-	
+
 	[Header("Turn:")]
-	public bool canAct = true;
+	public bool followingPath = false;
 	public bool hasActed = false;
 	public Vector2Int location; //In general we'll use this for step/distance calculations rather than transform.position
 								//It'll be a little more reliable once we have characters moving around in tandem
@@ -31,17 +31,29 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 	static private int itemLayer = 1 << 8; //We use this to ignore the lootable item layer when checking for collisions
 	private	IEnumerator nextMove;
-		
+
+
 	/*
 	 *	PUBLIC METHODS
 	 */
-	
+
 	public Vector2Int GetLocation() {
 		return location;
 	}
 
+	public void AddWaypoint(Vector2 target) {
+		if (_ai != null && _ai is PlayerPathfinding) {
+			_ai.AddWaypoint(target);
+			followingPath = true;
+		}
+	}
+
 	public bool GetPlayable() {
-		return faction == Faction.Player;
+		if (!followingPath) {
+			return faction == Faction.Player;
+		}
+
+		return false;
 	}
 
 	public void Loot(Vector2Int getLocation, bool restrainDistance = true) {
@@ -63,27 +75,27 @@ public class MapEntity : MonoBehaviour, IAlignable {
 			}
 		}
 	}
-	
+
 	public void Move(int x, int y) {
 
 		Vector2 target = new Vector2(location.x + x, location.y + y); //setup our direction
-		
+
 		if (x == 0 && y == 0) {
 			//If we got a move with no x and y, interpret as a pause;
 			Pause();
 			return;
 		}
-		
+
 		//See if there's another move already queued
 		if (!(nextMove == null)) {
 			return;
 		}
-		
+
 		//Check space is passable
 		if (!CheckPassableAt(target)) {
 			return;
 		}
-		
+
 		nextMove = LerpTo(target);
 		StartCoroutine(nextMove);
 		hasActed = true;
@@ -94,12 +106,17 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		Move((int)move.x, (int)move.y);
 	}
 
+	public void Move(Vector3 move) {
+		Move((int)move.x, (int)move.y);
+	}
+
 	public void Pause() {
 		hasActed = true;
 	}
 
 	public void NextStep() {
 		if (_ai != null) {
+			Debug.Log("NEXT STEP CALLED: AI IS " + _ai);
 			_ai.NextStep();
 			hasActed = true;
 		} else {
@@ -108,19 +125,19 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	}
 
 	/*
-	 *	PRIVATE METHODS 
+	 *	PRIVATE METHODS
 	 */
-	
+
 	public void AlignToTile(Vector3 newLocation) {
 		transform.position = newLocation;
-		location = CleanLocation(newLocation);	
+		location = CleanLocation(newLocation);
 	}
-	
+
 	public void AlignToTile() {
 		//Overloaded version incase I forget to use the normal version
 		AlignToTile(transform.position);
 	}
-	
+
 	private void Awake() {
 		location = CleanLocation(transform.position);
 	}
@@ -144,10 +161,10 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	private Vector2Int CleanLocation(Vector3 newLocation) {
 		return new Vector2Int((int)newLocation.x, (int)newLocation.y);
 	}
-	
-	
+
+
 	private IEnumerator LerpTo(Vector2 newLoc) {
-       
+
 		Vector2 init = transform.position; //Initial position
 		float i = 0;
 
@@ -162,6 +179,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		}
 
 		StopCoroutine(nextMove);
+
 		nextMove = null;
 
 		location = CleanLocation(transform.position);
@@ -174,7 +192,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 	/*
 	 * OTHER
-	 */ 
+	 */
 
 public enum Faction {
 	Neutral,   //Entities that act but shouldn't be targeted
