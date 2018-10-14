@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class PlayerPathfinding : MapAI {
 
-	int stepCounter = -1; //If -1, pathfinding not active
+	/* PLAYER PATHFINDING
+		This class should be attached to the player character. Essentially, we're re-using the basic AI class and
+		issuing commands whenever we touch the screen.
+
+		This class should only decide what to do with the given input -- the actual form of the input will be handled by
+		the PlayerInputManager class.
+
+		Unlike the simple enemy patrol AI, this class will work backwards through a List (as opposed to an array) of
+		valid locations.
+	*/
+
+	private int stepCounter = -1; //If -1, pathfinding not active;
 	public List<Vector2> pathSteps; //Actual target will be index 0, counter will move backwards after steps located
+
 
 	public override void NextStep() {
 		Debug.Log("PLAYER NEXT STEP");
@@ -16,11 +28,16 @@ public class PlayerPathfinding : MapAI {
 				stepCounter--;
 
 				if (stepCounter <= -1) {
+					//If we've run out of steps, we can let this component become inactive.
 					ClearPath();
+					return;
 				}
 			}
 
-			_me.Move(NextStepDirection());
+			if (! _me.Move(NextStepDirection() ) ) {
+				ClearPath();
+				return;
+			}
 
 		}
 	}
@@ -46,15 +63,14 @@ public class PlayerPathfinding : MapAI {
 		Debug.Log(stepCounter + " is value of stepCounter");
 	}
 
-	private void ClearPath() {
-		pathSteps = new List<Vector2>();
-		stepCounter = -1;
-		_me.followingPath = false;
-	}
-
 	private void AddMidpoint(Vector2 location) {
 		pathSteps.Add(location);
 	}
 
+	private void ClearPath() {
+		pathSteps = new List<Vector2>();
+		stepCounter = -1;
+		//_me.followingPath = false;
+	}
 
 }

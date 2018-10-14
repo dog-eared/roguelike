@@ -49,6 +49,11 @@ public class PlayerInputManager : MonoBehaviour {
 		 *
 		 */
 
+		if (Input.GetKeyDown("t")) {
+			touchControls = !touchControls;
+		}
+
+
 		if (current != null) {
 
 			if (Input.GetAxis("Horizontal") != 0) {
@@ -80,7 +85,6 @@ public class PlayerInputManager : MonoBehaviour {
 			if (touchControls) {
 				if (Input.GetMouseButtonDown(0)) {
 					Vector2 point = Vector2Int.RoundToInt(new Vector2(mousePos.x, mousePos.y));
-
 					current.AddWaypoint(point);
 				}
 
@@ -100,8 +104,11 @@ public class PlayerInputManager : MonoBehaviour {
 					}
 				}
 
-				if (Input.GetMouseButtonDown(0)) {
+				if (Input.GetMouseButtonDown(0) && Input.GetButton("Step")) {
 					current.Move(GetMouseXY());
+				} else if (Input.GetMouseButtonDown(0)) {
+					Vector2 point = Vector2Int.RoundToInt(new Vector2(mousePos.x, mousePos.y));
+					current.AddWaypoint(point);
 				}
 
 			}

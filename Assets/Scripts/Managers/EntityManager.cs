@@ -38,22 +38,29 @@ public class EntityManager : MonoBehaviour {
 
 	private void Update() {
 
-		if (!destroyedList[actingEntity]) { //Check that the bool associated with this list is not destroyed
-			if (!entities[actingEntity].GetPlayable()) {
+
+		while (entities[actingEntity].GetPlayable() == false) {
+			if (destroyedList[actingEntity] == false) {
 				entities[actingEntity].NextStep();
-				actingEntity++;
-			} else if (entities[actingEntity].hasActed) {
-				actingEntity++;
 			}
-		} else {
-			actingEntity++;
+			IncreaseActingEntityCounter();
 		}
+
+		/*
+		if (destroyedList[actingEntity]) {
+			IncreaseActingEntityCounter();
+		} else if (entities[actingEntity].GetPlayable() == false) {
+			entities[actingEntity].NextStep();
+			IncreaseActingEntityCounter();
+		}*/
+	}
+
+	private void IncreaseActingEntityCounter() {
+		actingEntity++;
 		CheckRoundDone();
 	}
 
 	private void SetSceneControls() {
-
-
 		if (_em == null) {
 			_em = GetComponent<EffectManager>();
 		}
@@ -66,6 +73,7 @@ public class EntityManager : MonoBehaviour {
 			gl = currentMap.GetComponent<GridLayout>();
 		}
 	}
+
 
 	private void CheckRoundDone() {
 

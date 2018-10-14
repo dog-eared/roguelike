@@ -17,13 +17,13 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	public string entityName = "Untitled Entity"; //Name that the user sees in GUI/ingame, rather than using the
 												  //GameObject name
 	public Faction faction; 	//Used to determine if/when they act in the turn order, general allegience
-	public float moveSpeed = 10f; //Speed of movements on board
+	public const float moveSpeed = 18f; //Speed of movements on board
 
 	public MapAI _ai;
 	public CombatData _cd;
 
 	[Header("Turn:")]
-	public bool followingPath = false;
+	//public bool followingPath = false;
 	public bool hasActed = false;
 	public Vector2Int location; //In general we'll use this for step/distance calculations rather than transform.position
 								//It'll be a little more reliable once we have characters moving around in tandem
@@ -41,15 +41,19 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		return location;
 	}
 
+	public bool HasAnimation() {
+		return (nextMove != null);
+	}
+
 	public void AddWaypoint(Vector2 target) {
 		if (_ai != null && _ai is PlayerPathfinding) {
 			_ai.AddWaypoint(target);
-			followingPath = true;
+			//followingPath = true;
 		}
 	}
 
 	public bool GetPlayable() {
-		if (!followingPath) {
+		if (hasActed == false) {
 			return faction == Faction.Player;
 		}
 
@@ -76,38 +80,42 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		}
 	}
 
-	public void Move(int x, int y) {
+	public bool Move(int x, int y) {
+		//Returning true on valid move, false on invalid movie
 
+		hasActed = true;
 		Vector2 target = new Vector2(location.x + x, location.y + y); //setup our direction
 
 		if (x == 0 && y == 0) {
 			//If we got a move with no x and y, interpret as a pause;
-			Pause();
-			return;
+			//Pause();
+			return false;
 		}
 
 		//See if there's another move already queued
 		if (!(nextMove == null)) {
-			return;
+			//Our move target was valid, but the timing was not acceptable
+			return true;
 		}
 
 		//Check space is passable
-		if (!CheckPassableAt(target)) {
-			return;
+		if (!CheckPassableAt(target))
+		{
+			return false;
 		}
 
 		nextMove = LerpTo(target);
 		StartCoroutine(nextMove);
-		hasActed = true;
 
+		return true;
 	}
 
-	public void Move(Vector2 move) {
-		Move((int)move.x, (int)move.y);
+	public bool Move(Vector2 move) {
+		return Move((int)move.x, (int)move.y);
 	}
 
-	public void Move(Vector3 move) {
-		Move((int)move.x, (int)move.y);
+	public bool Move(Vector3 move) {
+		return Move((int)move.x, (int)move.y);
 	}
 
 	public void Pause() {
@@ -116,7 +124,6 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 	public void NextStep() {
 		if (_ai != null) {
-			Debug.Log("NEXT STEP CALLED: AI IS " + _ai);
 			_ai.NextStep();
 			hasActed = true;
 		} else {
@@ -143,19 +150,21 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	}
 
 	private bool CheckPassableAt(Vector2 target) {
-		//If a collider found, returns false; not passable
-		//Else, returns true
-		if (Physics2D.Raycast(target, Vector3.forward, Mathf.Infinity, ~itemLayer)) {
-			GameObject hit = Physics2D.Raycast(target, Vector3.forward, Mathf.Infinity).transform.gameObject;
+		//If a collider found, returns false; not passable Else, returns true Debug.DrawLine(transform.position,
+		//target);
+		try {
+			GameObject hit = Physics2D.BoxCast(target, new Vector2(.5f, .5f), 0, Vector3.forward, Mathf.Infinity, ~itemLayer).transform.gameObject;
 			if (hit.GetComponent<CombatData>()) {
 				_cd.Attack(hit);
 				hasActed = true;
+			} else {
+				return false;
 			}
-			return false;
+		} catch {
+			Debug.Log("nothing found");
+			return true;
 		}
-
-		Debug.Log("nothing found");
-		return true;
+		return false;
 	}
 
 	private Vector2Int CleanLocation(Vector3 newLocation) {
@@ -167,6 +176,8 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 		Vector2 init = transform.position; //Initial position
 		float i = 0;
+
+		location = CleanLocation((Vector3)newLoc);
 
 		//isMoving = true;
 
@@ -182,7 +193,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 		nextMove = null;
 
-		location = CleanLocation(transform.position);
+		//location = CleanLocation(transform.position);
 		//isMoving = false;
 	}
 
