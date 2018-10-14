@@ -5,29 +5,35 @@ using UnityEngine.Tilemaps;
 
 public class EffectManager : MonoBehaviour {
 
+	/*	EFFECT MANAGER
+	*	Handles visual effects on the tilemap. Currently, this means both GUI/feedback related effects (ie path
+	*	highlights) and map related effects (blood stains). May split these up eventually.
+	*
+	*/
+
 	public Tilemap _underdeco;
 	public Tilemap _effects;
 	public Tilemap _data;
-	
+
 	public Tile[] bloodEffects;
 	public Tile highlight;
-	
+
 	List<Vector3Int> highlightTiles = new List<Vector3Int>();
-	
+
 	public void MouseHighlight(Vector3 location) {
 		WipeHighlights();
 		PlaceHighlight(location);
 	}
-	
+
 	public void PlaceHighlight(Vector3 location, bool includeDraw = true) {
 		highlightTiles.Add(new Vector3Int((int)location.x, (int)location.y, -10));
-		
+
 		if (includeDraw) {
 			DrawHighlights();
 		}
-		
+
 	}
-	
+
 	public void DrawHighlights() {
 		foreach (Vector3Int hl in highlightTiles)
 		{
@@ -35,12 +41,12 @@ public class EffectManager : MonoBehaviour {
 		}
 	}
 
-	
+
 	public void WipeHighlights() {
 		_data.ClearAllTiles();
 		highlightTiles = new List<Vector3Int>();
 	}
-	
+
 	public void PlaceEffect(Vector3Int location) {
 		try {
 			_underdeco.SetTile(location, bloodEffects[0]);

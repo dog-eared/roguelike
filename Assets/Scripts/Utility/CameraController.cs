@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
+	/* 	CAMERA CONTROLLER
+	*	Used to handle camera.
+	*	TODO: Use topLeftBounds and bottomRightBounds to control where camera can actually go
+	*/
 
 	private const int zDist = -10; //Z placement of camera when it moves
 

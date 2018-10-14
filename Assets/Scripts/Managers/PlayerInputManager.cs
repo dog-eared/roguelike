@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour {
 
-	/* PLAYER INPUT MANAGER
+	/*	PLAYER INPUT MANAGER
 	 *
-	 * Captures player input and sends commands to the proper
-	 * place.
+	 *	Captures player input and sends commands to the proper place -- for now, handles both touch/mouse and keyboard
+	 *	controls.
+	 *
+	 *	Contains:
 	 */
 
 
@@ -76,23 +78,14 @@ public class PlayerInputManager : MonoBehaviour {
 				current.Loot(current.location);
 			}
 
-
-			/*
-			 * TOUCH CONTROLS
-			 *
-			 */
-
+			/* TOUCH CONTROLS */
 			if (touchControls) {
 				if (Input.GetMouseButtonDown(0)) {
 					Vector2 point = Vector2Int.RoundToInt(new Vector2(mousePos.x, mousePos.y));
 					current.AddWaypoint(point);
 				}
 
-			/*
-			 * PC CONTROLS
-			 *
-			 */
-
+			/* MOUSE CONTROLS */
 			} else {
 
 				if (mousePos != lastMousePos) {
@@ -116,15 +109,15 @@ public class PlayerInputManager : MonoBehaviour {
 
 	}
 
-
-
 	public void SetPlayable(MapEntity given) {
+		//Used to switch control to player
 		current = given;
 		CameraController.SetTarget(current.transform.gameObject);
 	}
 
 
 	Vector3Int GetOneStep(Vector2 input) {
+		//Gets one step away from player regardless of click
 		Vector2 step = GetMouseXY();
 
 		return new Vector3Int((int)step.x, (int)step.y, -10);
@@ -132,7 +125,8 @@ public class PlayerInputManager : MonoBehaviour {
 
 
 	Vector2 GetMouseXY() {
-
+		//Translates mouse click into correct movement
+		//TODO rename? It's more accurately getting a useful move x and y
 		Vector3 pos = mousePos - current.transform.position; //Getting the difference
 
 		Debug.Log(pos.x + " + " + pos.y + " = " + (pos.x+pos.y) + " which is greater than tolerance: " + ((pos.x + pos.y) < mouseStepTolerance));
@@ -160,8 +154,6 @@ public class PlayerInputManager : MonoBehaviour {
 		return new Vector2(moveX, moveY);
 
 	}
-
-
 
 	private void GetSceneController() {
 		_scene = GameObject.Find("SceneController");

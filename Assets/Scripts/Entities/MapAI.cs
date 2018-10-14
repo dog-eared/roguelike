@@ -4,9 +4,10 @@ using UnityEngine;
 
 public abstract class MapAI : MonoBehaviour {
 
-	/* ENEMY AI
+	/*	MAP AI
 	 *
-	 * Parent class from which all AI behaviours should inherit. Does basic tasks (getting the MapEntity if possible)
+	 *	Parent class from which all AI behaviours should inherit. Does basic tasks (getting the MapEntity if possible),
+	 *	and ensures child classes implement generic methods.
 	 *
 	 */
 

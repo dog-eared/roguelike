@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyAI_SimplePatrol : MapAI {
 
+	/* 	ENEMY AI: SimplePatrol
+	*	Walks dumbly between all given waypoints.
+	*/
+
 	public int patrolCounter = 0;
 	public Vector2[] steps;
 
@@ -12,8 +16,6 @@ public class EnemyAI_SimplePatrol : MapAI {
 		if (steps.Length == 0) {
 			_me.Pause();
 		}
-
-		//Debug.Log(_me.GetLocation() + " to " + steps[patrolCounter]);
 
 		if (_me.GetLocation() == steps[patrolCounter] ) {
 			patrolCounter++;

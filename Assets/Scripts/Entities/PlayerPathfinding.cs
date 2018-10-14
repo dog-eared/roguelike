@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerPathfinding : MapAI {
 
-	/* PLAYER PATHFINDING
-		This class should be attached to the player character. Essentially, we're re-using the basic AI class and
-		issuing commands whenever we touch the screen.
-
-		This class should only decide what to do with the given input -- the actual form of the input will be handled by
-		the PlayerInputManager class.
-
-		Unlike the simple enemy patrol AI, this class will work backwards through a List (as opposed to an array) of
-		valid locations.
+	/*	PLAYER PATHFINDING
+	*	This class should be attached to the player character. Essentially, we're re-using the basic AI class and
+	*	issuing commands whenever we touch the screen.
+	*
+	*	This class should only decide what to do with the given input -- the actual form of the input will be handled by
+	*	the PlayerInputManager class.
+	*
+	*	Unlike the simple enemy patrol AI, this class will work backwards through a List (as opposed to an array) of
+	*	valid locations.
 	*/
 
 	private int stepCounter = -1; //If -1, pathfinding not active;
