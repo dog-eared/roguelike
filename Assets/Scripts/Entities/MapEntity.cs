@@ -149,8 +149,6 @@ public class MapEntity : MonoBehaviour, IAlignable {
 			if (hit.GetComponent<CombatData>()) {
 				_cd.Attack(hit);
 				hasActed = true;
-			} else {
-				return false;
 			}
 		} catch {
 			Debug.Log("nothing found");

@@ -53,6 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Data\AbilityData.cs" />
+     <Compile Include="Assets\Scripts\Data\SelfTarget.cs" />
+     <Compile Include="Assets\Scripts\Data\SingleTarget.cs" />
      <Compile Include="Assets\Scripts\Entities\CombatData.cs" />
      <Compile Include="Assets\Scripts\Entities\EnemyAI_SimplePatrol.cs" />
      <Compile Include="Assets\Scripts\Entities\MapAI.cs" />
@@ -62,12 +65,13 @@
      <Compile Include="Assets\Scripts\Items\MapItem.cs" />
      <Compile Include="Assets\Scripts\Managers\EffectManager.cs" />
      <Compile Include="Assets\Scripts\Managers\EntityManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\GUIManager.cs" />
      <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerInputManager.cs" />
      <Compile Include="Assets\Scripts\Utility\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Utility\IAlignable.cs" />
-     <Compile Include="Assets\Scripts\Utility\IAttackable.cs" />
-     <Compile Include="Assets\Scripts\Utility\ILootable.cs" />
+     <Compile Include="Assets\Scripts\Utility\Interfaces\IAlignable.cs" />
+     <Compile Include="Assets\Scripts\Utility\Interfaces\IAttackable.cs" />
+     <Compile Include="Assets\Scripts\Utility\Interfaces\ILootable.cs" />
      <Compile Include="Assets\VisibilityManager.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/e_m/Roguelike/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

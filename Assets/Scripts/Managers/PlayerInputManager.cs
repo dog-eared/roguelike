@@ -13,7 +13,8 @@ public class PlayerInputManager : MonoBehaviour {
 	 */
 
 
-	public GameObject _player;
+	public GameObject _player; 	//TODO: Make this static when there's a PlayerData object to create/save the object each
+	 							//scene load.
 	public bool isMoving;
 	public bool isPlayerTurn = true;
 
@@ -23,7 +24,7 @@ public class PlayerInputManager : MonoBehaviour {
 	public CameraController _cc;
 
 	private const float mouseStepTolerance = 0.78f; //Used to determine how far from the player's icon to click to trigger a movement
-	private const float mouseDiagonalTolerance = 3.7f; //Used to determine how loosely a diagonal angle will be be interpreted as a diagonal move
+	private const float mouseDiagonalTolerance = 3.7f; //Used to determine how loosely a diagonal angle will be be interpreted as a diagonal move 
 
 	public GameObject _scene;
 	public EffectManager _effects;
