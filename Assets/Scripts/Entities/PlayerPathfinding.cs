@@ -20,7 +20,6 @@ public class PlayerPathfinding : MapAI {
 
 
 	public override void NextStep() {
-		Debug.Log("PLAYER NEXT STEP");
 
 		if (pathSteps.Count > 0 && stepCounter != -1) {
 
@@ -60,7 +59,6 @@ public class PlayerPathfinding : MapAI {
 		//Calculate waypoints to get to target, add them to the list
 
 		stepCounter = pathSteps.Count - 1;
-		Debug.Log(stepCounter + " is value of stepCounter");
 	}
 
 	private void AddMidpoint(Vector2 location) {

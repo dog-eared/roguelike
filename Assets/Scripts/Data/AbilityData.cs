@@ -10,4 +10,7 @@ public abstract class AbilityData : ScriptableObject {
 	public string displayName = "Untitled Ability";
 	public Texture2D GUIicon;
 
+	public int power;
+	public int range;
+
 }

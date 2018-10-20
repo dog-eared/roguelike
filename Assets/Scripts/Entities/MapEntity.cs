@@ -16,7 +16,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	public Faction faction; 	//Used to determine if/when they act in the turn order, general allegience
 
 	public MapAI _ai;
-	public CombatData _cd;
+	public EntityAbilities _abil;
 
 	[Header("Turn:")]
 	public bool hasActed = false;
@@ -141,17 +141,17 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	}
 
 	private bool CheckPassableAt(Vector2 target) {
+
 		//If a collider found, returns false; not passable Else, returns true
 		try {
 			GameObject hit = Physics2D.BoxCast(target, new Vector2(.5f, .5f), 0, Vector3.forward, Mathf.Infinity, ~itemLayer).transform.gameObject;
 
 			//If we can kill it, we'll try to hit it.
 			if (hit.GetComponent<CombatData>()) {
-				_cd.Attack(hit);
+				_abil.Attack(hit); //Generic attack
 				hasActed = true;
 			}
 		} catch {
-			Debug.Log("nothing found");
 			return true;
 		}
 		return false;

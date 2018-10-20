@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05af0c46c9e5b49949026c754aa39ebe, type: 3}
   m_Name: HealSelf
   m_EditorClassIdentifier: 
-  displayName: Untitled Ability
+  displayName: Healing
   GUIicon: {fileID: 0}
-  heal: 20
+  power: 20

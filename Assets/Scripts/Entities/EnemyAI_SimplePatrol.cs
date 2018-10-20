@@ -35,9 +35,6 @@ public class EnemyAI_SimplePatrol : MapAI {
 
 		float x = Mathf.Clamp(steps[patrolCounter].x - loc.x, -1f, 1);
 		float y = Mathf.Clamp(steps[patrolCounter].y - loc.y, -1f, 1);
-
-		Debug.Log("x " + x + " y " + y);
-
 		return new Vector2(x, y);
 
 	}
