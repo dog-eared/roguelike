@@ -53,16 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Data\AbilityData.cs" />
-     <Compile Include="Assets\Scripts\Data\SelfTarget.cs" />
-     <Compile Include="Assets\Scripts\Data\SingleTarget.cs" />
+     <Compile Include="Assets\Scripts\Data\Abilities\AbilityData.cs" />
+     <Compile Include="Assets\Scripts\Data\Abilities\SelfTarget.cs" />
+     <Compile Include="Assets\Scripts\Data\Abilities\SingleTarget.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\EnemyAI_RandomInBounds.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\EnemyAI_SimplePatrol.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\MapAI.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\PlayerPathfinding.cs" />
      <Compile Include="Assets\Scripts\Entities\CombatData.cs" />
-     <Compile Include="Assets\Scripts\Entities\EnemyAI_SimplePatrol.cs" />
      <Compile Include="Assets\Scripts\Entities\EntityAbilities.cs" />
-     <Compile Include="Assets\Scripts\Entities\MapAI.cs" />
+     <Compile Include="Assets\Scripts\Entities\LightRadius.cs" />
      <Compile Include="Assets\Scripts\Entities\MapEntity.cs" />
-     <Compile Include="Assets\Scripts\Entities\PlayerPathfinding.cs" />
-     <Compile Include="Assets\Scripts\EntityAbilities.cs" />
      <Compile Include="Assets\Scripts\Items\InventoryItem.cs" />
      <Compile Include="Assets\Scripts\Items\MapItem.cs" />
      <Compile Include="Assets\Scripts\Managers\EffectManager.cs" />
@@ -70,10 +71,15 @@
      <Compile Include="Assets\Scripts\Managers\GUIManager.cs" />
      <Compile Include="Assets\Scripts\Managers\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\Managers\PlayerInputManager.cs" />
-     <Compile Include="Assets\Scripts\Utility\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Managers\PlayerVisibilityManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ShadowManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\VisibilityManager.cs" />
+     <Compile Include="Assets\Scripts\Utility\GUI\CameraController.cs" />
      <Compile Include="Assets\Scripts\Utility\Interfaces\IAlignable.cs" />
      <Compile Include="Assets\Scripts\Utility\Interfaces\IAttackable.cs" />
      <Compile Include="Assets\Scripts\Utility\Interfaces\ILootable.cs" />
+     <Compile Include="Assets\Scripts\Utility\Miscellaneous\DoNotDestroy.cs" />
+     <Compile Include="Assets\Scripts\Utility\Miscellaneous\RandomDirection.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/e_m/Roguelike/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
