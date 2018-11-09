@@ -24,6 +24,12 @@ public class EntityManager : MonoBehaviour {
 
 	static private GridLayout gl;
 
+	private bool canProgress = true;
+	private float minimumTurnTime = 0.0f; //Only used when entity list is small.
+	private const int minimumEntityCount = 3; //defines when entity list is small as above
+	private float roundStartTime;
+
+
 	/* PUBLIC METHODS */
 
 	public static void EntityDestroyed(GameObject entity) {
@@ -44,7 +50,7 @@ public class EntityManager : MonoBehaviour {
 	private void Update() {
 		//Regular update. Effectively: all entities up to player-controlled act -- and if no players
 		//left in the round, all remaining entities and new round starts.
-		while (entities[actingEntity].GetPlayable() == false) {
+		while (canProgress && entities[actingEntity].GetPlayable() == false) {
 			if (destroyedList[actingEntity] == false) {
 				entities[actingEntity].NextStep();
 			}
@@ -54,7 +60,9 @@ public class EntityManager : MonoBehaviour {
 
 	private void IncreaseActingEntityCounter() {
 		//Called every time an entity acts.
-		actingEntity++;
+		if (actingEntity < entities.Length) {
+			actingEntity++;
+		}
 		CheckRoundDone();
 	}
 
@@ -74,7 +82,12 @@ public class EntityManager : MonoBehaviour {
 		}
 
 		if (actingEntity >= entities.Length) {
-			StartNewTurn();
+			if (Time.time >= roundStartTime + minimumTurnTime) {
+				StartNewTurn();
+			} else {
+				Invoke("StartNewTurn", minimumTurnTime - (Time.time - roundStartTime));
+				canProgress = false;
+			}
 		}
 	}
 
@@ -83,7 +96,12 @@ public class EntityManager : MonoBehaviour {
 		foreach (MapEntity ent in entities) {
 			ent.hasActed = false;
 		}
+
+		Debug.Log("STARTED NEW TURN.");
 		actingEntity = 0;
+
+		canProgress = true;
+		roundStartTime = Time.time;
 	}
 
 	private void GetAllEntities(bool newDestroyedList = true) {
@@ -103,6 +121,10 @@ public class EntityManager : MonoBehaviour {
 
 		if (newDestroyedList) {
 			destroyedList = new bool[entities.Length];
+		}
+
+		if (entities.Length < minimumEntityCount) {
+			minimumTurnTime = 0.45f;
 		}
 
 	}

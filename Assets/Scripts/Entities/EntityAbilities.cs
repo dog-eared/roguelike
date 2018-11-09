@@ -1,4 +1,3 @@
-﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +11,11 @@ public class EntityAbilities : MonoBehaviour {
 	*/
 
 	public List<AbilityData> abilities;
+	public bool defaultMeleeAttack = true; //Should be false on prefab versions, since they can have a preset attack to
+										   //save on startup time.
 
 	void Awake() {
-		//TODO: Placeholder until I flesh this Count
+		//TODO: Placeholder until I flesh this out
 		CreateAttackAbility(10);
 	}
 
@@ -22,15 +23,18 @@ public class EntityAbilities : MonoBehaviour {
 		//Creates a new normal attack with given attack power.
 		//Intended for when new weapon equipped or entity instantiated
 		SingleTarget attack = (SingleTarget)ScriptableObject.CreateInstance("SingleTarget");
-		attack.SetData(1, 10);
+		attack.SetData(1, 10); //PLACEHOLDER range 1 damage 10
 
-		if (abilities.Count == 0) {
-			abilities.Add(attack);
-		} else {
-			abilities.RemoveAt(0);
-			abilities.Insert(0, attack); //Put it first
+		if (defaultMeleeAttack) {
+
+			if (abilities.Count == 0) {
+				abilities.Add(attack);
+			} else {
+				//abilities.RemoveAt(0);
+				abilities.Insert(0, attack); //Put it first
+			}
+
 		}
-
 	}
 
 	public void Attack(GameObject target) {

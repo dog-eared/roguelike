@@ -13,7 +13,7 @@ public abstract class MapAI : MonoBehaviour {
 
 	protected MapEntity _me;
 
-	private void Awake() {
+	protected virtual void Awake() {
 		try {
 			_me = GetComponent<MapEntity>();
 		} catch {
@@ -23,8 +23,12 @@ public abstract class MapAI : MonoBehaviour {
 
 	public abstract void NextStep(); //This should be called each step by EntityManager for each NPC entity
 
-	public abstract Vector2 NextStepDirection();
+	public virtual Vector2 NextStepDirection() {
+		return Vector2.zero;
+	}
 
-	public abstract void AddWaypoint(Vector2 location);
+	public virtual void AddWaypoint(Vector2 location) {
+		Debug.Log(this.GetType() + " does not implement way points.");
+	}
 
 }

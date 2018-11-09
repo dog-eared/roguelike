@@ -53,11 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Data\Abilities\AbilityData.cs" />
-     <Compile Include="Assets\Scripts\Data\Abilities\SelfTarget.cs" />
-     <Compile Include="Assets\Scripts\Data\Abilities\SingleTarget.cs" />
-     <Compile Include="Assets\Scripts\Entities\AI\EnemyAI_RandomInBounds.cs" />
-     <Compile Include="Assets\Scripts\Entities\AI\EnemyAI_SimplePatrol.cs" />
+     <Compile Include="Assets\Scripts\Abilities\AbilityData.cs" />
+     <Compile Include="Assets\Scripts\Abilities\SelfTarget.cs" />
+     <Compile Include="Assets\Scripts\Abilities\SingleTarget.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\AI_RandomInBounds.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\AI_SimplePatrol.cs" />
+     <Compile Include="Assets\Scripts\Entities\AI\HostileAI_Stationary.cs" />
      <Compile Include="Assets\Scripts\Entities\AI\MapAI.cs" />
      <Compile Include="Assets\Scripts\Entities\AI\PlayerPathfinding.cs" />
      <Compile Include="Assets\Scripts\Entities\CombatData.cs" />

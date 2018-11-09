@@ -2,10 +2,25 @@ using UnityEngine;
 
 public static class RandomDirection {
 
-	public static Vector2 Step() {
-		int dir = Random.Range(1, 8);
+	/*	RANDOM DIRECTION
+	*	Utility class to get random directions in various contexts.
+	*
+	*/
+
+	public static Vector2 Step(bool includePause = false) {
+		//Gets a random step
+		//NOTE: In C#, switches are hashed, so this should be pretty fast.
+		int dir;
+
+		if (includePause) {
+			dir = Random.Range(0, 8);
+		} else {
+			dir = Random.Range(1, 8);
+		}
 
 		switch (dir) {
+			case 0:
+				return Vector2.zero;
 			case 1:
 				return new Vector2(0, 1);
 			case 2:
@@ -20,7 +35,7 @@ public static class RandomDirection {
 				return new Vector2(-1, -1);
 			case 7:
 				return new Vector2(-1, 0);
-			default:
+			default: //8
 				return new Vector2(-1, 1);
 		}
 	}

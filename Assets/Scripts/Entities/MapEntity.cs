@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EntityAbilities))]
 public class MapEntity : MonoBehaviour, IAlignable {
 
 	/*	MAP ENTITY
@@ -108,6 +108,17 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		return Move((int)move.x, (int)move.y);
 	}
 
+	public bool Attack(GameObject target, bool endTurn = true) {
+		if (_abil != null && !hasActed) {
+			_abil.Attack(target);
+			if (endTurn) {
+				hasActed = true;
+			}
+			return true;
+		}
+		return false;
+	}
+
 	public void Pause() {
 		//Simple end turn
 		hasActed = true;
@@ -137,6 +148,9 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	}
 
 	private void Awake() {
+		if (_abil == null) {
+			_abil = GetComponent<EntityAbilities>();
+		}
 		location = CleanLocation(transform.position);
 	}
 
@@ -148,7 +162,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 			//If we can kill it, we'll try to hit it.
 			if (hit.GetComponent<CombatData>()) {
-				_abil.Attack(hit); //Generic attack
+				Attack(hit); //Generic attack
 				hasActed = true;
 			}
 		} catch {
