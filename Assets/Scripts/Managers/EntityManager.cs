@@ -20,7 +20,7 @@ public class EntityManager : MonoBehaviour {
 	private static bool[] destroyedList;
 
 	private static EffectManager _em;
-	private int actingEntity = 0;
+	public int actingEntity = 0;
 
 	static private GridLayout gl;
 
@@ -50,7 +50,8 @@ public class EntityManager : MonoBehaviour {
 	private void Update() {
 		//Regular update. Effectively: all entities up to player-controlled act -- and if no players
 		//left in the round, all remaining entities and new round starts.
-		while (canProgress && entities[actingEntity].GetPlayable() == false) {
+
+		while (canProgress && CheckPlayable(actingEntity) == false) {
 			if (destroyedList[actingEntity] == false) {
 				entities[actingEntity].NextStep();
 			}
@@ -63,6 +64,9 @@ public class EntityManager : MonoBehaviour {
 		if (actingEntity < entities.Length) {
 			actingEntity++;
 		}
+
+		Debug.Log("Entity is " + actingEntity);
+
 		CheckRoundDone();
 	}
 
@@ -81,6 +85,7 @@ public class EntityManager : MonoBehaviour {
 			//TODO: Call game over.
 		}
 
+
 		if (actingEntity >= entities.Length) {
 			if (Time.time >= roundStartTime + minimumTurnTime) {
 				StartNewTurn();
@@ -92,12 +97,12 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	private void StartNewTurn() {
+		CancelInvoke();
 		//Reset hasActed for all active entities and start entity list again
 		foreach (MapEntity ent in entities) {
 			ent.hasActed = false;
 		}
 
-		Debug.Log("STARTED NEW TURN.");
 		actingEntity = 0;
 
 		canProgress = true;
@@ -142,6 +147,14 @@ public class EntityManager : MonoBehaviour {
 			entities[i].AlignToTile(gl.CellToWorld(cellPosition));
 
 		}
+	}
+
+	private bool CheckPlayable(int entity) {
+		if (entities[entity] != null) {
+			return entities[entity].GetPlayable();
+		}
+
+		return false;
 	}
 
 	private static void PlaceDeathEffect(Vector3Int location) {

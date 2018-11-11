@@ -126,13 +126,14 @@ GameObject:
   - component: {fileID: 78731710}
   - component: {fileID: 78731709}
   - component: {fileID: 78731708}
+  - component: {fileID: 78731713}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (1)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &78731707
 Transform:
   m_ObjectHideFlags: 0
@@ -263,6 +264,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &78731713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78731706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &107868246
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &107868247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,13 +572,14 @@ GameObject:
   - component: {fileID: 176755981}
   - component: {fileID: 176755980}
   - component: {fileID: 176755979}
+  - component: {fileID: 176755984}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (4)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &176755978
 Transform:
   m_ObjectHideFlags: 0
@@ -695,6 +710,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &176755984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 176755977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &186144276
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &317412534
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1153,6 +1181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entities: []
+  actingEntity: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,7 +1791,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966056141}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.98, y: -12.98, z: 0}
+  m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
@@ -1784,7 +1813,7 @@ MonoBehaviour:
   _ai: {fileID: 966056147}
   _abil: {fileID: 966056148}
   hasActed: 0
-  location: {x: 1, y: 2}
+  location: {x: 2, y: -2}
 --- !u!61 &966056145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1864,13 +1893,14 @@ GameObject:
   - component: {fileID: 971513966}
   - component: {fileID: 971513965}
   - component: {fileID: 971513964}
+  - component: {fileID: 971513969}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (7)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &971513963
 Transform:
   m_ObjectHideFlags: 0
@@ -2001,6 +2031,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &971513969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971513962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1036458642
 GameObject:
   m_ObjectHideFlags: 0
@@ -17779,13 +17822,14 @@ GameObject:
   - component: {fileID: 1054315665}
   - component: {fileID: 1054315664}
   - component: {fileID: 1054315663}
+  - component: {fileID: 1054315668}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (6)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1054315662
 Transform:
   m_ObjectHideFlags: 0
@@ -17916,6 +17960,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1054315668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1054315661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1059723832
 GameObject:
   m_ObjectHideFlags: 0
@@ -17948,7 +18005,7 @@ MonoBehaviour:
   _player: {fileID: 966056141}
   isMoving: 0
   isPlayerTurn: 1
-  touchControls: 1
+  touchControls: 0
   current: {fileID: 966056144}
   _cc: {fileID: 519420030}
   _scene: {fileID: 0}
@@ -18125,13 +18182,14 @@ GameObject:
   - component: {fileID: 1179792764}
   - component: {fileID: 1179792763}
   - component: {fileID: 1179792762}
+  - component: {fileID: 1179792767}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1179792761
 Transform:
   m_ObjectHideFlags: 0
@@ -18262,6 +18320,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1179792767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179792760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1184830775
 GameObject:
   m_ObjectHideFlags: 0
@@ -18392,13 +18463,14 @@ GameObject:
   - component: {fileID: 1268246308}
   - component: {fileID: 1268246307}
   - component: {fileID: 1268246306}
+  - component: {fileID: 1268246311}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (5)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1268246305
 Transform:
   m_ObjectHideFlags: 0
@@ -18529,6 +18601,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1268246311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1268246304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1316601849
 GameObject:
   m_ObjectHideFlags: 0
@@ -18823,7 +18908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1364742510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18837,7 +18922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: 'Kobold '
   faction: 2
-  _ai: {fileID: 0}
+  _ai: {fileID: 1364742514}
   _abil: {fileID: 0}
   hasActed: 0
   location: {x: 0, y: 0}
@@ -18991,7 +19076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1418105121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19660,13 +19745,14 @@ GameObject:
   - component: {fileID: 1894456932}
   - component: {fileID: 1894456931}
   - component: {fileID: 1894456930}
+  - component: {fileID: 1894456935}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (2)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1894456929
 Transform:
   m_ObjectHideFlags: 0
@@ -19797,6 +19883,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1894456935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1894456928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1922735938
 GameObject:
   m_ObjectHideFlags: 0
@@ -19810,13 +19909,14 @@ GameObject:
   - component: {fileID: 1922735942}
   - component: {fileID: 1922735941}
   - component: {fileID: 1922735940}
+  - component: {fileID: 1922735945}
   m_Layer: 0
   m_Name: FAC2 Vicious Vines (3)
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1922735939
 Transform:
   m_ObjectHideFlags: 0
@@ -19947,6 +20047,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1922735945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922735938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: {x: 2, y: 2}
+  inRange: []
 --- !u!1 &1942506287
 GameObject:
   m_ObjectHideFlags: 0

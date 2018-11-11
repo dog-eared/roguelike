@@ -75,7 +75,6 @@ public class MapEntity : MonoBehaviour, IAlignable {
 	public bool Move(int x, int y) {
 		//Used to move entities around the board.
 		//Returning true on valid move, false on invalid move.
-		hasActed = true;
 		Vector2 target = new Vector2(location.x + x, location.y + y); //setup our direction
 
 		if (x == 0 && y == 0) {
@@ -96,6 +95,7 @@ public class MapEntity : MonoBehaviour, IAlignable {
 
 		nextMove = LerpTo(target);
 		StartCoroutine(nextMove);
+		hasActed = true;
 
 		return true;
 	}
@@ -151,6 +151,15 @@ public class MapEntity : MonoBehaviour, IAlignable {
 		if (_abil == null) {
 			_abil = GetComponent<EntityAbilities>();
 		}
+
+		if (_ai == null) {
+			try {
+				_ai = GetComponent<MapAI>();
+			} catch {
+				Debug.Log("ERROR: Couldn't find an appropriate AI for " + this.gameObject.name);
+			}
+		}
+
 		location = CleanLocation(transform.position);
 	}
 
