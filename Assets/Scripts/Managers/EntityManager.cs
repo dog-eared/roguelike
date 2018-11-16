@@ -14,12 +14,15 @@ public class EntityManager : MonoBehaviour {
 	*	in the turn order.
 	*/
 
+	private static EntityManager _e;
+
 	public MapEntity[] entities;
+	public static MapEntity PlayerEntity {get; private set;}
 
 	private static GameObject[] entityObjects;
 	private static bool[] destroyedList;
 
-	private static EffectManager _em;
+	private static EffectManager _effect;
 	public int actingEntity = 0;
 
 	static private GridLayout gl;
@@ -45,6 +48,13 @@ public class EntityManager : MonoBehaviour {
 		//Regular setup for scene.
 		SetSceneControls();
 		GetAllEntities();
+
+		if (_e == null) {
+			_e = this;
+			//Throw some code in to destroy any other entitymanagers
+		}
+
+
 	}
 
 	private void Update() {
@@ -64,16 +74,13 @@ public class EntityManager : MonoBehaviour {
 		if (actingEntity < entities.Length) {
 			actingEntity++;
 		}
-
-		Debug.Log("Entity is " + actingEntity);
-
-		CheckRoundDone();
+		CheckRoundDone(); //Reaching end & looping back is part of CheckRoundDone()
 	}
 
 	private void SetSceneControls() {
 		//Finds the effect manager.
-		if (_em == null) {
-			_em = GetComponent<EffectManager>();
+		if (_effect == null) {
+			_effect = GetComponent<EffectManager>();
 		}
 
 	}
@@ -84,7 +91,6 @@ public class EntityManager : MonoBehaviour {
 			this.enabled = false;
 			//TODO: Call game over.
 		}
-
 
 		if (actingEntity >= entities.Length) {
 			if (Time.time >= roundStartTime + minimumTurnTime) {
@@ -132,6 +138,21 @@ public class EntityManager : MonoBehaviour {
 			minimumTurnTime = 0.45f;
 		}
 
+		PlayerEntity = FindPlayerEntity();
+
+	}
+
+	private MapEntity FindPlayerEntity(MapEntity[] entityList = null) {
+		if (entityList == null) {
+			entityList = entities;
+		}
+
+		foreach (MapEntity me in entityList) {
+			if (me.faction == Faction.Player) {
+				return me;
+			}
+		}
+		return null;
 	}
 
 	static int SortEntity(GameObject a, GameObject b) {
@@ -150,6 +171,7 @@ public class EntityManager : MonoBehaviour {
 	}
 
 	private bool CheckPlayable(int entity) {
+		//Used to determine if given entity is playable or not
 		if (entities[entity] != null) {
 			return entities[entity].GetPlayable();
 		}
@@ -160,7 +182,7 @@ public class EntityManager : MonoBehaviour {
 	private static void PlaceDeathEffect(Vector3Int location) {
 		//Used for placing things like bloodstains, bones, whatever enemies drop on death.
 		try {
-			_em.PlaceEffect(location);
+			_effect.PlaceEffect(location);
 		} catch {
 			Debug.Log("ERROR: Couldn't place death effect.");
 		}

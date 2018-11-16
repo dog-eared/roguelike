@@ -14,7 +14,7 @@ public class AI_RandomInBounds : MapAI {
 	public Vector2Int topLeftBound;		//Used rather than Bounds object because it's easier to parse x/y coords
 	public Vector2Int bottomRightBound; //as they relate to room sizing
 
-	private const int maxStepCheck = 3; //Maximum number of checks for move
+	protected const int maxStepCheck = 3; //Maximum number of checks for move
 
 	public override void NextStep() {
 		//Gets a random value to see if should move, else, pauses
@@ -44,5 +44,5 @@ public class AI_RandomInBounds : MapAI {
 		//Loop did not work; return zero
 		return Vector2.zero;
 	}
-	
+
 }

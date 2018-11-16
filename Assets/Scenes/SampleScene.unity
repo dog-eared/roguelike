@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 78731709}
   - component: {fileID: 78731708}
   - component: {fileID: 78731713}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (1)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -141,11 +141,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78731706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32, y: -16.92, z: 0}
+  m_LocalPosition: {x: 32, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &78731708
 MonoBehaviour:
@@ -192,9 +192,9 @@ MonoBehaviour:
   _ai: {fileID: 0}
   _abil: {fileID: 78731708}
   hasActed: 0
-  location: {x: 20, y: -16}
---- !u!61 &78731711
-BoxCollider2D:
+  location: {x: 32, y: -16}
+--- !u!58 &78731711
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -206,18 +206,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &78731712
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,12 +276,12 @@ GameObject:
   m_Component:
   - component: {fileID: 107868252}
   - component: {fileID: 107868251}
-  - component: {fileID: 107868250}
   - component: {fileID: 107868249}
+  - component: {fileID: 107868250}
   - component: {fileID: 107868247}
   - component: {fileID: 107868253}
   - component: {fileID: 107868248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC1 Bad Snake (2)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -328,8 +318,8 @@ MonoBehaviour:
   pauseFrequency: 10
   topLeftBound: {x: 32, y: -4}
   bottomRightBound: {x: 37, y: -11}
---- !u!61 &107868249
-BoxCollider2D:
+--- !u!58 &107868249
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -341,18 +331,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!114 &107868250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +403,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 107868246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34, y: -4, z: 0}
+  m_LocalPosition: {x: 34, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
@@ -573,7 +553,7 @@ GameObject:
   - component: {fileID: 176755980}
   - component: {fileID: 176755979}
   - component: {fileID: 176755984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (4)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -587,11 +567,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176755977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.05, y: -18, z: 0}
+  m_LocalPosition: {x: 38, y: -19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &176755979
 MonoBehaviour:
@@ -639,8 +619,8 @@ MonoBehaviour:
   _abil: {fileID: 176755979}
   hasActed: 0
   location: {x: 20, y: -16}
---- !u!61 &176755982
-BoxCollider2D:
+--- !u!58 &176755982
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -652,18 +632,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &176755983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -966,20 +936,20 @@ GameObject:
   m_Component:
   - component: {fileID: 317412537}
   - component: {fileID: 317412536}
-  - component: {fileID: 317412535}
   - component: {fileID: 317412534}
+  - component: {fileID: 317412535}
   - component: {fileID: 317412539}
   - component: {fileID: 317412540}
   - component: {fileID: 317412538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC1 Bad Snake
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &317412534
-BoxCollider2D:
+--- !u!58 &317412534
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -991,18 +961,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!114 &317412535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,8 +1316,8 @@ MonoBehaviour:
   _abil: {fileID: 747405302}
   hasActed: 0
   location: {x: 21, y: -16}
---- !u!61 &747405305
-BoxCollider2D:
+--- !u!58 &747405305
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1369,18 +1329,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &747405306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1727,7 +1677,6 @@ GameObject:
   - component: {fileID: 966056143}
   - component: {fileID: 966056147}
   - component: {fileID: 966056142}
-  - component: {fileID: 966056145}
   - component: {fileID: 966056144}
   - component: {fileID: 966056146}
   - component: {fileID: 966056148}
@@ -1738,52 +1687,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &966056142
-SpriteRenderer:
+--- !u!58 &966056142
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966056141}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 0c0c8051db6164b30af98573a4557094, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1764936747
-  m_SortingLayer: 6
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 974a5d0b2fd4345a683e54f3aa89d9a6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.495
 --- !u!4 &966056143
 Transform:
   m_ObjectHideFlags: 0
@@ -1793,7 +1711,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1323858400}
   m_Father: {fileID: 2038253009}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1814,31 +1733,6 @@ MonoBehaviour:
   _abil: {fileID: 966056148}
   hasActed: 0
   location: {x: 2, y: -2}
---- !u!61 &966056145
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 966056141}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.95, y: 0.95}
-  m_EdgeRadius: 0
 --- !u!114 &966056146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1788,7 @@ GameObject:
   - component: {fileID: 971513965}
   - component: {fileID: 971513964}
   - component: {fileID: 971513969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (7)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -1912,7 +1806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &971513964
 MonoBehaviour:
@@ -1960,8 +1854,8 @@ MonoBehaviour:
   _abil: {fileID: 971513964}
   hasActed: 0
   location: {x: 20, y: -16}
---- !u!61 &971513967
-BoxCollider2D:
+--- !u!58 &971513967
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1973,18 +1867,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &971513968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17823,7 +17707,7 @@ GameObject:
   - component: {fileID: 1054315664}
   - component: {fileID: 1054315663}
   - component: {fileID: 1054315668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (6)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -17837,11 +17721,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1054315661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.02, y: -18, z: 0}
+  m_LocalPosition: {x: 36, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1054315663
 MonoBehaviour:
@@ -17889,8 +17773,8 @@ MonoBehaviour:
   _abil: {fileID: 1054315663}
   hasActed: 0
   location: {x: 20, y: -16}
---- !u!61 &1054315666
-BoxCollider2D:
+--- !u!58 &1054315666
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -17902,18 +17786,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &1054315667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18169,170 +18043,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1179792760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1179792761}
-  - component: {fileID: 1179792766}
-  - component: {fileID: 1179792765}
-  - component: {fileID: 1179792764}
-  - component: {fileID: 1179792763}
-  - component: {fileID: 1179792762}
-  - component: {fileID: 1179792767}
-  m_Layer: 0
-  m_Name: FAC2 Vicious Vines
-  m_TagString: Entity
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1179792761
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.05, y: -15.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2038253009}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1179792762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7ac1d35d34e403baa29ffe437e6a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilities: []
-  defaultMeleeAttack: 1
---- !u!114 &1179792763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7484d14acab4891b10f0ec67fd4dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 20
-  maxHP: 20
-  attackPower: 10
-  initiative: 0
-  destroyBodyOnDeath: 1
---- !u!114 &1179792764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c865ddd10b72544f780957f70c96c544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityName: Vicious Vines
-  faction: 2
-  _ai: {fileID: 0}
-  _abil: {fileID: 1179792762}
-  hasActed: 0
-  location: {x: 20, y: -16}
---- !u!61 &1179792765
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
---- !u!212 &1179792766
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 0c0c8051db6164b30af98573a4557094, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1034726971
-  m_SortingLayer: 5
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d166ee968b1444e19b393ee3a1d1ecec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
-  m_SpriteSortPoint: 0
---- !u!114 &1179792767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1179792760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: {x: 2, y: 2}
-  inRange: []
 --- !u!1 &1184830775
 GameObject:
   m_ObjectHideFlags: 0
@@ -18450,170 +18160,6 @@ Transform:
   m_Father: {fileID: 1346559675}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1268246304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1268246305}
-  - component: {fileID: 1268246310}
-  - component: {fileID: 1268246309}
-  - component: {fileID: 1268246308}
-  - component: {fileID: 1268246307}
-  - component: {fileID: 1268246306}
-  - component: {fileID: 1268246311}
-  m_Layer: 0
-  m_Name: FAC2 Vicious Vines (5)
-  m_TagString: Entity
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1268246305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.03, y: -18.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2038253009}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1268246306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad7ac1d35d34e403baa29ffe437e6a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilities: []
-  defaultMeleeAttack: 1
---- !u!114 &1268246307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb7484d14acab4891b10f0ec67fd4dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 20
-  maxHP: 20
-  attackPower: 10
-  initiative: 0
-  destroyBodyOnDeath: 1
---- !u!114 &1268246308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c865ddd10b72544f780957f70c96c544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityName: Vicious Vines
-  faction: 2
-  _ai: {fileID: 0}
-  _abil: {fileID: 1268246306}
-  hasActed: 0
-  location: {x: 20, y: -16}
---- !u!61 &1268246309
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
---- !u!212 &1268246310
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 0c0c8051db6164b30af98573a4557094, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1034726971
-  m_SortingLayer: 5
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d166ee968b1444e19b393ee3a1d1ecec, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 2
-  m_SpriteSortPoint: 0
---- !u!114 &1268246311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268246304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d406d064252d41d690547b96e2c39d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: {x: 2, y: 2}
-  inRange: []
 --- !u!1 &1316601849
 GameObject:
   m_ObjectHideFlags: 0
@@ -18731,6 +18277,81 @@ Transform:
   m_Father: {fileID: 1346559675}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1323858399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323858400}
+  - component: {fileID: 1323858401}
+  m_Layer: 9
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1323858400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323858399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 966056143}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1323858401
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323858399}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 0c0c8051db6164b30af98573a4557094, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1764936747
+  m_SortingLayer: 6
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 974a5d0b2fd4345a683e54f3aa89d9a6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.32, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1333148080
 GameObject:
   m_ObjectHideFlags: 0
@@ -18899,10 +18520,10 @@ GameObject:
   - component: {fileID: 1364742511}
   - component: {fileID: 1364742513}
   - component: {fileID: 1364742510}
-  - component: {fileID: 1364742514}
   - component: {fileID: 1364742515}
   - component: {fileID: 1364742516}
-  m_Layer: 0
+  - component: {fileID: 1364742514}
+  m_Layer: 9
   m_Name: FAC1 Kobold
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -18922,7 +18543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: 'Kobold '
   faction: 2
-  _ai: {fileID: 1364742514}
+  _ai: {fileID: 0}
   _abil: {fileID: 0}
   hasActed: 0
   location: {x: 0, y: 0}
@@ -19018,15 +18639,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1364742509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ea20e78024c417288f9cad9219233b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a34502f8c4f84042b4a3404097e97ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolCounter: 0
-  steps:
-  - {x: 16, y: -7}
-  - {x: 20, y: -7}
-  - {x: 16, y: -11}
-  - {x: 20, y: -11}
+  pauseFrequency: 3
+  topLeftBound: {x: 15, y: -7}
+  bottomRightBound: {x: 20, y: -11}
 --- !u!114 &1364742515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19065,12 +18683,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1418105126}
   - component: {fileID: 1418105125}
-  - component: {fileID: 1418105124}
   - component: {fileID: 1418105123}
+  - component: {fileID: 1418105124}
   - component: {fileID: 1418105121}
   - component: {fileID: 1418105127}
   - component: {fileID: 1418105122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC1 Bad Snake (1)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -19107,8 +18725,8 @@ MonoBehaviour:
   pauseFrequency: 10
   topLeftBound: {x: 9, y: -2}
   bottomRightBound: {x: 14, y: -9}
---- !u!61 &1418105123
-BoxCollider2D:
+--- !u!58 &1418105123
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -19120,18 +18738,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!114 &1418105124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19746,7 +19354,7 @@ GameObject:
   - component: {fileID: 1894456931}
   - component: {fileID: 1894456930}
   - component: {fileID: 1894456935}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (2)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -19760,11 +19368,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1894456928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.02, y: -16.08, z: 0}
+  m_LocalPosition: {x: 37, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1894456930
 MonoBehaviour:
@@ -19812,8 +19420,8 @@ MonoBehaviour:
   _abil: {fileID: 1894456930}
   hasActed: 0
   location: {x: 20, y: -16}
---- !u!61 &1894456933
-BoxCollider2D:
+--- !u!58 &1894456933
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -19825,18 +19433,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &1894456934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19910,7 +19508,7 @@ GameObject:
   - component: {fileID: 1922735941}
   - component: {fileID: 1922735940}
   - component: {fileID: 1922735945}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FAC2 Vicious Vines (3)
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -19924,11 +19522,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922735938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.03, y: -17.06, z: 0}
+  m_LocalPosition: {x: 39, y: -17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2038253009}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1922735940
 MonoBehaviour:
@@ -19976,8 +19574,8 @@ MonoBehaviour:
   _abil: {fileID: 1922735940}
   hasActed: 0
   location: {x: 20, y: -16}
---- !u!61 &1922735943
-BoxCollider2D:
+--- !u!58 &1922735943
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -19989,18 +19587,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.495
 --- !u!212 &1922735944
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23617,15 +23205,15 @@ Tilemap:
   m_TileOrientation: 0
   m_TileOrientationMatrix:
     e00: 1
-    e01: 0
+    e01: -0
     e02: 0
     e03: 0
     e10: 0
-    e11: 1
+    e11: -1
     e12: 0
     e13: 0
     e20: 0
-    e21: 0
+    e21: -0
     e22: 1
     e23: 0
     e30: 0
@@ -23676,12 +23264,10 @@ Transform:
   - {fileID: 1418105126}
   - {fileID: 107868252}
   - {fileID: 747405301}
-  - {fileID: 1179792761}
   - {fileID: 78731707}
   - {fileID: 1894456929}
   - {fileID: 1922735939}
   - {fileID: 176755978}
-  - {fileID: 1268246305}
   - {fileID: 1054315662}
   - {fileID: 971513963}
   m_Father: {fileID: 0}
